@@ -1,5 +1,7 @@
 # wsgi.py
 from flask import Flask, request, make_response, render_template
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 from config import Config
 import os
 import sys
@@ -18,11 +20,14 @@ ma = Marshmallow(app)
 from models import Product
 from schemas import products_schema, product_schema
 
+admin = Admin(app, template_mode='bootstrap3')
+admin.add_view(ModelView(Product, db.session))
+
 @app.route('/products')
 def products():
     products = db.session.query(Product).all() # SQLAlchemy request => 'SELECT * FROM products'
     return products_schema.jsonify(products)
-"""
+
 @app.route('/products/<int:id>', methods=['GET', 'DELETE', 'PATCH'])
 def product(id):
     product = db.session.query(Product)
@@ -42,7 +47,7 @@ def product(id):
         item.name = content["name"]
         db.session.commit()
         return make_response("Updated",204)
-"""
+
 @app.route('/<int:id>')
 def product_html(id):
     product = db.session.query(Product).get(id)
