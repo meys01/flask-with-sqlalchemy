@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4b1898890adb9a9971168d8e3113a76d6e77b5f8b150fdb897f7427f3ec34e59"
+            "sha256": "c7f78171454437cfab7e1f75764a295cdc35c791bd871c44a22c158cec339483"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -292,21 +292,19 @@
             ],
             "version": "==0.16.0"
         },
-<<<<<<< Updated upstream
         "wtforms": {
             "hashes": [
                 "sha256:0cdbac3e7f6878086c334aa25dc5a33869a3954e9d1e015130d65a69309b3b61",
                 "sha256:e3ee092c827582c50877cdbd49e9ce6d2c5c1f6561f849b3b068c1b8029626f1"
             ],
             "version": "==2.2.1"
-=======
+        },
         "zipp": {
             "hashes": [
                 "sha256:b338014b9bc7102ca69e0fb96ed07215a8954d2989bc5d83658494ab2ba634af",
                 "sha256:e013e7800f60ec4dde789ebf4e9f7a54236e4bbf5df2a1a4e20ce9e1d9609d67"
             ],
             "version": "==2.0.1"
->>>>>>> Stashed changes
         }
     },
     "develop": {}
